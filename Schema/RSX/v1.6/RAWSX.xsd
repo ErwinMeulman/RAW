@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.6 01/03/2015">
+	<xs:include schemaLocation="RAWSXDLX.xsd"/>
+	<xs:annotation>
+		<xs:documentation>================== RAW contractvormen ==================</xs:documentation>
+	</xs:annotation>
+	<xs:element name="raw.bestek">
+		<xs:annotation>
+			<xs:documentation>contractvorm "bestek"</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="dlx.voor.compleet" minOccurs="0"/>
+				<xs:element ref="dl1.compleet"/>
+				<xs:element ref="dl2.compleet"/>
+				<xs:element ref="dl3.compleet"/>
+				<xs:element ref="dlx.na.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.voor.inschrijving.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.inschrijvingsbiljet"/>
+				<xs:element ref="dlx.voorblad.inschrijvingsstaat"/>
+				<!--<xs:element ref="raw.bijdrageformulier"/>-->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.raamovereenkomst">
+		<xs:annotation>
+			<xs:documentation>contractvorm "raamovereenkomst"</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="dlx.voor.compleet" minOccurs="0"/>
+				<xs:element ref="dl1.compleet"/>
+				<xs:element ref="dl2.compleet.ro"/>
+				<xs:element ref="dl3.compleet"/>
+				<xs:element ref="dlx.na.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.voor.inschrijving.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.inschrijvingsbiljet"/>
+				<xs:element ref="dlx.voorblad.inschrijvingsstaat"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.deelopdracht.raamovereenkomst">
+		<xs:annotation>
+			<xs:documentation>contractvorm "deelopdracht"</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo.orig"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="dlx.voor.compleet" minOccurs="0"/>
+				<xs:element ref="dl2.compleet.do"/>
+				<xs:element ref="dlx.na.compleet" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.nvi">
+		<xs:annotation>
+			<xs:documentation>contractvorm "nota van inlichtingen voor bestek"</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo.orig"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="dlx.voor.compleet" minOccurs="0"/>
+				<xs:element ref="dl1.compleet" minOccurs="0"/>
+				<xs:element ref="dl2.compleet.nvi" minOccurs="0"/>
+				<xs:element ref="dl3.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.na.compleet" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.nvi.ro">
+		<xs:annotation>
+			<xs:documentation>contractvorm "nota van inlichtingen voor raamovereenkomst"</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo.orig"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="dlx.voor.compleet" minOccurs="0"/>
+				<xs:element ref="dl1.compleet" minOccurs="0"/>
+				<xs:element ref="dl2.compleet.nvi.ro" minOccurs="0"/>
+				<xs:element ref="dl3.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.na.compleet" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.stt.meer.minder">
+		<xs:annotation>
+			<xs:documentation>contractvorm "staat van meer en minder werk zonder open posten"</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo.orig"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="dlx.voor.compleet" minOccurs="0"/>
+				<xs:element ref="dl1.compleet" minOccurs="0"/>
+				<xs:element ref="dl2.compleet.meer.minder"/>
+				<xs:element ref="dl3.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.na.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.voor.inschrijving.compleet" minOccurs="0"/>
+				<xs:element ref="dlx.inschrijvingsbiljet" minOccurs="0"/>
+				<xs:element ref="dlx.voorblad.inschrijvingsstaat" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.inschrijvingsstaat">
+		<xs:annotation>
+			<xs:documentation>Inschrijvingsstaat</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo.orig"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="ins.stt.voorblad"/>
+				<xs:element ref="ins.stt.voorsubtot"/>
+				<xs:element ref="ins.stt.staart"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="raw.inschrijvingsstaat.raamovereenkomst">
+        <xs:annotation>
+            <xs:documentation>Inschrijvingsstaat</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="raw.contractinfo.orig"/>
+                <xs:element ref="dlx.koptekst" minOccurs="0"/>
+                <xs:element ref="ins.stt.voorblad"/>
+                <xs:element ref="ins.stt.voorsubtot.ro"/>
+                <xs:element ref="ins.stt.staart.ro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="raw.inschrijvingsstaat.meer.minder">
+		<xs:annotation>
+			<xs:documentation>Inschrijvingsstaat</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="raw.contractinfo.orig"/>
+				<xs:element ref="dlx.koptekst" minOccurs="0"/>
+				<xs:element ref="ins.stt.voorblad"/>
+				<xs:element ref="ins.stt.voorsubtot.meer.minder"/>
+				<xs:element ref="ins.stt.staart.meer.minder"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <!--<xs:element name="raw.bijdrageformulier" type="tekstblok.uitgebreid">
+    <xs:annotation>
+      <xs:documentation>het formulier voor afdrachten RAW en FCO aan het eind van het bestek</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+	<xs:annotation>
+		<xs:documentation>================== Administratieve informatie (algemene besteksgegevens) ==================</xs:documentation>
+	</xs:annotation>
+	<xs:element name="raw.contractinfo">
+		<xs:annotation>
+			<xs:documentation>informatie over het contractdocument (alleen bij bestek of raamovereenkomst)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="versie.jaarversie"/>
+				<xs:element ref="raw.xml.versie"/>
+				<xs:element ref="raw.bestek.nr"/>
+				<xs:element ref="raw.bestek.omschrijving"/>
+				<xs:element ref="raw.contr.aangemaakt"/>
+				<xs:element ref="raw.contr.gewijzigd"/>
+				<xs:element ref="raw.code.licentiehouder"/>
+				<xs:choice>
+					<xs:element ref="raw.status.concept"/>
+					<xs:sequence>
+						<xs:annotation>
+							<xs:documentation>het element raw.overeenkomst.nr moet in dit geval het overeenkomstnummer bevatten van de organisatie die het bestek heeft geregistreerd</xs:documentation>
+						</xs:annotation>
+						<xs:element ref="raw.reg.nr"/>
+						<xs:element ref="raw.reg.datum"/>
+						<xs:element ref="raw.overeenkomst.nr"/>
+						<xs:element ref="raw.ontgrendelcode"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute ref="tabposities"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.contractinfo.orig">
+		<xs:annotation>
+			<xs:documentation>
+        informatie over het contractdocument dat ten grondslag ligt aan het afgeleide document (alleen bij nvi, do of stt)
+        De waarden van de volgende elementen moet worden overgenomen uit het oorspronkelijke bestek c.q. de oorspronkelijke raamovereenkomst:
+        - raw.bestek.nr
+        - raw.reg.nr
+        - raw.reg.datum
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="versie.jaarversie"/>
+				<xs:element ref="raw.xml.versie"/>
+				<xs:element ref="raw.bestek.nr"/>
+				<xs:element ref="raw.bestek.nr.additioneel" minOccurs="0"/>
+				<xs:element ref="raw.bestek.omschrijving" minOccurs="0"/>
+				<xs:element ref="raw.contr.aangemaakt"/>
+				<xs:element ref="raw.code.licentiehouder"/>
+				<xs:element ref="raw.reg.nr"/>
+				<xs:element ref="raw.reg.datum"/>
+				<xs:element ref="raw.overeenkomst.nr"/>
+			</xs:sequence>
+			<xs:attribute ref="tabposities"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="raw.overeenkomst.nr" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>het RAW overeenkomstnummer van de  organisatie die het bestek het laatst heeft gewijzigd c.q. van de organisatie die het bestek heeft geregistreerd</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.ontgrendelcode">
+		<xs:annotation>
+			<xs:documentation>de ontgrendelcode van een ovk</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="32" fixed="false"/>
+				<xs:pattern value="[a-fA-F\d]{32}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="raw.code.licentiehouder" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>de code van de RAW-licentiehouder die het programma heeft gemaakt waarmee het RSX is gegenereerd</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.status.concept" type="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>status is concept (leeg element)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.reg.nr">
+		<xs:annotation>
+			<xs:documentation>het door CROW toegekende registratienummer van het bestek</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[0-9]{5,6}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="raw.reg.datum" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>de datum waarop het regiratienummer voor het bestek door CROW is toegekend</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!--<xs:element name="raw.rsx.aangemaakt" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>de datum en tijd waarop het RSX bestand is aangemaakt</xs:documentation>
+		</xs:annotation>
+	</xs:element>-->
+	<xs:element name="raw.contr.aangemaakt" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>de datum en tijd waarop bestek/overeenkomst is aangemaakt in het bestekken programma</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.contr.gewijzigd" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>de datum en tijd waarop bestek/overeenkomst voor het laatst is gewijzigd in het bestekken programma</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.bestek.nr" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>de door de opstellende organisatie aan het contract gegeven code</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.bestek.nr.additioneel" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>aditionele informatie of codes op raw.bestek.nr (alleen bij nvi, do of stt)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.bestek.omschrijving" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>de door de opstellende organisatie aan het contract gegeven omschrijving</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="raw.xml.versie" type="xs:string" fixed="1.6 01/03/2015">
+		<xs:annotation>
+			<xs:documentation>de versie van de XSD die ten grondslag ligt aan het XML-bestand</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>================== Checksuminfo ==================</xs:documentation>
+	</xs:annotation>
+	<xs:element name="bestandsnaam" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>de naam van een bestand in  het zipbestand</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MD5.checksum">
+		<xs:annotation>
+			<xs:documentation>de MD5 checksum van een bestand</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="32"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bestandsinfo">
+		<xs:annotation>
+			<xs:documentation>element dat zowel de bestandnaam als de MD5 checksum info bevat</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="bestandsnaam"/>
+				<xs:element ref="MD5.checksum"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bestandscontrole">
+		<xs:annotation>
+			<xs:documentation>het overkoepelende element dat alle controle informatie bevat</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="bestandsinfo" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

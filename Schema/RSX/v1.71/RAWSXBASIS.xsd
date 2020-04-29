@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by BWIT (CROW) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.71 16/08/2016">
+	<xs:annotation>
+		<xs:documentation>
+      ================== simpleTypes =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="hoev.2decimalen">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hoev.2decimalen.positief">
+		<xs:restriction base="hoev.2decimalen">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gen.naamkort" final="restriction">
+		<xs:annotation>
+			<xs:documentation>Naam van 50 alfanumerieke posities</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:normalizedString">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gen.codeeencijferalgemeen">
+		<xs:annotation>
+			<xs:documentation>Een eencijferige code van 0 t/m 9</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gen.codetweecijferalgemeen">
+		<xs:annotation>
+			<xs:documentation>Een tweecijferige code van 00 t/m 99</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d\d"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gen.codetweecijferspeciaal">
+		<xs:annotation>
+			<xs:documentation>Een tweecijferige code van 10 t/m 99</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9]\d"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gen.codeeenoftweecijfer">
+		<xs:annotation>
+			<xs:documentation>Een eencijferige of tweecijferige code van 0 t/m 99</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d\d?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="deficode.positienr">
+		<xs:annotation>
+			<xs:documentation>De mogelijke waarde waarmee een deficodekolom kan worden aangeduid</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="34"/>
+			<xs:enumeration value="45"/>
+			<xs:enumeration value="56"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="deficode.inhoudnr">
+		<xs:annotation>
+			<xs:documentation>Deficode inhoud nummer</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9][1-9]?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eenheid">
+		<xs:annotation>
+			<xs:documentation>Eenheid</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z1-9/]{0,4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eenheid.zondereuro">
+		<xs:annotation>
+			<xs:documentation>Eenheid zonder EUR eenheid.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z1-9/]{0,4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>een element zonder content of attributen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0" maxOccurs="0"/>
+		<xs:attributeGroup ref="gen.geenattributen"/>
+	</xs:complexType>
+	<xs:attributeGroup name="gen.geenattributen"/>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Niet systeem gebonden elementen en attributen =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="br" type="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>XMTML1 (afgeleid): Geforceerd regeleinde (zachte return)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="tab" type="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>Tab karakter</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:attribute name="inspring" type="xs:positiveInteger">
+		<xs:annotation>
+			<xs:documentation>
+        Attribuut dat de positie bepaalt van het eerste karakter.
+        De positie wordt in 1/10 mm weergegeven.
+        Dit attribuut moet worden gebruikt bij alineas.
+      </xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="tabposities" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>
+        Attribuut dat alle posities van (gebruikers)tabs bevat voor het betreffende element.
+        Bv.   L50;L100;L180
+        Iedere tab begint met de Tab uitlijnling: L,R,D. De tab wordt in 1/10 mm weergegeven. De getallen zijn de afstand t.o.v. de linkerkant van kolom omschrijving.
+        Als deze tabposities staan bij contractinfo, betreft dit de instellingen van de standaardtabs.
+      </xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="paginaeinde">
+		<xs:annotation>
+			<xs:documentation>
+        Attribuut waarmee wordt aangegeven of het betreffende element op een nieuwe pagina moet beginnen
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ja"/>
+				<xs:enumeration value="nee"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="muteren">
+		<xs:annotation>
+			<xs:documentation>Attribuut waarmee wordt aangegeven of de inhoud van het element mag worden gemuteerd</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ja"/>
+				<xs:enumeration value="nee"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="eenheid.bouwstof" type="eenheid">
+		<xs:annotation>
+			<xs:documentation>De eenheid bij de bouwstof</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="eenheidwijzigbaar">
+		<xs:annotation>
+			<xs:documentation>Attribuut waarmee wordt aangegeven of de eenheid mag worden gemuteerd</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ja"/>
+				<xs:enumeration value="nee"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="aard">
+		<xs:annotation>
+			<xs:documentation>
+        L = aannemer moet bouwstof leveren
+        T = bouwstof wordt door opdrachtgever ter beschiking gesteld
+        I = Ter inlichting
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="L"/>
+				<xs:enumeration value="T"/>
+				<xs:enumeration value="I"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="hoev.bouwstof" type="hoev.2decimalen">
+		<xs:annotation>
+			<xs:documentation>hoeveelheid bouwstof</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="invultype">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="besteknummer"/>
+				<xs:enumeration value="toelichting"/>
+				<xs:enumeration value="omschrijving"/>
+				<xs:enumeration value="reglement"/>
+				<xs:enumeration value="omschrijvingperceel"/>
+				<xs:enumeration value="inschrijverbedrijfa"/>
+				<xs:enumeration value="inschrijvernaama"/>
+				<xs:enumeration value="inschrijverfunctiea"/>
+				<xs:enumeration value="inschrijverplaatsa"/>
+				<xs:enumeration value="inschrijverkvknummera"/>
+				<xs:enumeration value="inschrijverbedrijfb"/>
+				<xs:enumeration value="inschrijvernaamb"/>
+				<xs:enumeration value="inschrijverfunctieb"/>
+				<xs:enumeration value="inschrijverplaatsb"/>
+				<xs:enumeration value="inschrijverkvknummerb"/>
+				<xs:enumeration value="inschrijverbedrijfc"/>
+				<xs:enumeration value="inschrijvernaamc"/>
+				<xs:enumeration value="inschrijverfunctiec"/>
+				<xs:enumeration value="inschrijverplaatsc"/>
+				<xs:enumeration value="inschrijverkvknummerc"/>
+				<xs:enumeration value="aannemingssomexclusiefcijfers"/>
+				<xs:enumeration value="aannemingssomexclusiefletters"/>
+				<xs:enumeration value="omzetbelastingcijfers"/>
+				<xs:enumeration value="omzetbelastingletters"/>
+				<xs:enumeration value="ondertekeningdatum"/>
+				<xs:enumeration value="ondertekeningplaats"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:element name="sup" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>XMTML1 (afgeleid): Superscript (verhoogde tekst)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="sub" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>XMTML1 (afgeleid): Subscript (verlaagde tekst)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="em" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>
+        XMTML1 (afgeleid): Emphasis:
+        element gebruikt om iets te benaderukken (en anders weer te geven) bij: (V/V) cursief (zie Hfd 31). Dit is niet bedoeld voor proefverwijzingen
+      </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Lists (XHTML1) ===========================================
+    </xs:documentation>
+	</xs:annotation>
+	<!-- de verschillende soorten lijsten -->
+	<xs:element name="lijst.uitgebreid">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="lijst.item.uitgebreid" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="lijst.item.inspringen" use="optional"/>
+			<xs:attribute ref="lijst.item.tekstpositie" use="optional"/>
+			<xs:attribute ref="lijst.item.tekstbreedte" use="optional"/>
+			<xs:attribute ref="lijst.item.bullettype" use="optional"/>
+			<xs:attribute ref="lijst.item.suffix" use="optional"/>
+			<xs:attribute ref="lijst.item.start" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lijst.hoofdcode">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="lijst.item.hoofdcode" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="muteren" use="optional" default="ja"/>
+			<xs:attribute ref="lijst.item.inspringen" use="optional"/>
+			<xs:attribute ref="lijst.item.tekstpositie" use="optional"/>
+			<xs:attribute ref="lijst.item.tekstbreedte" use="optional"/>
+			<xs:attribute ref="lijst.item.bullettype" use="optional"/>
+			<xs:attribute ref="lijst.item.suffix" use="optional"/>
+			<xs:attribute ref="lijst.item.start" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lijst.eenvoudig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="lijst.item.eenvoudig" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="muteren" use="optional" default="ja"/>
+			<xs:attribute ref="lijst.item.inspringen" use="optional"/>
+			<xs:attribute ref="lijst.item.tekstpositie" use="optional"/>
+			<xs:attribute ref="lijst.item.tekstbreedte" use="optional"/>
+			<xs:attribute ref="lijst.item.bullettype" use="optional"/>
+			<xs:attribute ref="lijst.item.suffix" use="optional"/>
+			<xs:attribute ref="lijst.item.start" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- de verschillende soorten lijst items -->
+	<xs:element name="lijst.item.hoofdcode">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.eenvoudig">
+					<xs:attribute ref="tabposities"/>
+					<xs:attribute ref="eenheid.bouwstof"/>
+					<xs:attribute ref="eenheidwijzigbaar"/>
+					<xs:attribute ref="hoev.bouwstof"/>
+					<xs:attribute ref="aard"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lijst.item.eenvoudig">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.eenvoudig">
+					<xs:attribute ref="tabposities"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lijst.item.uitgebreid">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.uitgebreid">
+					<xs:attribute ref="tabposities"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- de verschillende lijst attributen -->
+	<xs:attribute name="lijst.item.inspringen" type="xs:unsignedInt"/>
+	<xs:attribute name="lijst.item.tekstpositie" type="xs:unsignedInt"/>
+	<xs:attribute name="lijst.item.tekstbreedte" type="xs:unsignedInt"/>
+	<xs:attribute name="lijst.item.bullettype">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="decimaal"/>
+				<xs:enumeration value="klein_letter"/>
+				<xs:enumeration value="groot_letter"/>
+				<xs:enumeration value="klein_romein"/>
+				<xs:enumeration value="groot_romein"/>
+				<xs:enumeration value="rond"/>
+				<xs:enumeration value="open_rond"/>
+				<xs:enumeration value="blok"/>
+				<xs:enumeration value="open_blok"/>
+				<xs:enumeration value="ster"/>
+				<xs:enumeration value="pijl"/>
+				<xs:enumeration value="vink"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="lijst.item.suffix">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="punt"/>
+				<xs:enumeration value="haakje"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="lijst.item.start" type="xs:unsignedInt"/>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Images (XHTML1) ===========================================
+
+      To avoid accessibility problems for people who aren't
+      able to see the image, you should provide a text
+      description using the alt and longdesc attributes.
+      In addition, avoid the use of server-side image maps.
+      Note that in this DTD there is no name attribute. That
+      is only available in the transitional and frameset DTD.
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="img">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="src" type="xs:anyURI" use="required"/>
+			<xs:attribute name="alt" type="xs:string" use="required"/>
+			<xs:attribute name="longdesc" type="xs:anyURI"/>
+			<xs:attribute name="height" type="xs:unsignedInt"/>
+			<xs:attribute name="width" type="xs:unsignedInt"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Tables (XHTML1) =======================================
+
+      Derived from IETF HTML table standard, see [RFC1942]
+    </xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="TFrame">
+		<xs:annotation>
+			<xs:documentation>
+        XHTML1 (afgeleid):
+        The border attribute sets the thickness of the frame around the
+        table. The default units are screen pixels.
+
+        The frame attribute specifies which parts of the frame around
+        the table should be rendered. The values are not the same as
+        CALS to avoid a name clash with the valign attribute.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="void"/>
+			<xs:enumeration value="above"/>
+			<xs:enumeration value="below"/>
+			<xs:enumeration value="hsides"/>
+			<xs:enumeration value="lhs"/>
+			<xs:enumeration value="rhs"/>
+			<xs:enumeration value="vsides"/>
+			<xs:enumeration value="box"/>
+			<xs:enumeration value="border"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TRules">
+		<xs:annotation>
+			<xs:documentation>
+        XHTML1 (afgeleid):
+        The rules attribute defines which rules to draw between cells:
+
+        If rules is absent then assume:
+        "none" if border is absent or border="0" otherwise "all"
+      </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="groups"/>
+			<xs:enumeration value="rows"/>
+			<xs:enumeration value="cols"/>
+			<xs:enumeration value="all"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="cellhalign">
+		<xs:annotation>
+			<xs:documentation>
+        XHTML1 (afgeleid):
+        horizontal alignment attributes for cell contents
+
+        char        alignment char, e.g. char=':'
+        charoff     offset for alignment char
+      </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="align">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="left"/>
+					<xs:enumeration value="center"/>
+					<xs:enumeration value="right"/>
+					<xs:enumeration value="justify"/>
+					<xs:enumeration value="char"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="char">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="charoff" type="xs:unsignedInt"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="cellvalign">
+		<xs:annotation>
+			<xs:documentation>
+        XHTML1 (afgeleid):
+        vertical alignment attributes for cell contents
+      </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="valign">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="top"/>
+					<xs:enumeration value="middle"/>
+					<xs:enumeration value="bottom"/>
+					<xs:enumeration value="baseline"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="tabel.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="caption" type="tekstblok.uitgebreid" minOccurs="0"/>
+				<xs:choice>
+					<xs:element ref="col" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="colgroup" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+				<xs:element ref="thead.uitgebreid" minOccurs="0"/>
+				<xs:element ref="tfoot.uitgebreid" minOccurs="0"/>
+				<xs:choice>
+					<xs:element ref="tr.uitgebreid" maxOccurs="unbounded"/>
+					<xs:element ref="tbody.uitgebreid" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="summary" type="xs:string"/>
+			<xs:attribute name="width" type="xs:unsignedInt"/>
+			<xs:attribute name="border" type="xs:unsignedInt"/>
+			<xs:attribute name="frame" type="TFrame"/>
+			<xs:attribute name="rules" type="TRules"/>
+			<xs:attribute name="cellspacing" type="xs:unsignedInt"/>
+			<xs:attribute name="cellpadding" type="xs:unsignedInt"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tabel.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="caption" type="tekstblok.eenvoudig" minOccurs="0"/>
+				<xs:choice>
+					<xs:element ref="col" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="colgroup" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+				<xs:element ref="thead.eenvoudig" minOccurs="0"/>
+				<xs:element ref="tfoot.eenvoudig" minOccurs="0"/>
+				<xs:choice>
+					<xs:element ref="tr.eenvoudig" maxOccurs="unbounded"/>
+					<xs:element ref="tbody.eenvoudig" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute ref="muteren" use="optional" default="ja"/>
+			<xs:attribute name="summary" type="xs:string"/>
+			<xs:attribute name="width" type="xs:unsignedInt"/>
+			<xs:attribute name="border" type="xs:unsignedInt"/>
+			<xs:attribute name="frame" type="TFrame"/>
+			<xs:attribute name="rules" type="TRules"/>
+			<xs:attribute name="cellspacing" type="xs:unsignedInt"/>
+			<xs:attribute name="cellpadding" type="xs:unsignedInt"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      Use thead to duplicate headers when breaking table
+      across page boundaries, or for static headers when
+      tbody sections are rendered in scrolling panel.
+
+      Use tfoot to duplicate footers when breaking table
+      across page boundaries, or for static footers when
+      tbody sections are rendered in scrolling panel.
+
+      Use multiple tbody sections when rules are needed
+      between groups of table rows.
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="thead.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr.eenvoudig" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="thead.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr.uitgebreid" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tfoot.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr.eenvoudig" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tfoot.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr.uitgebreid" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tbody.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr.eenvoudig" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tbody.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr.uitgebreid" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="colgroup">
+		<xs:annotation>
+			<xs:documentation>
+        XHTML1 (afgeleid):
+        colgroup groups a set of col elements. It allows you to group
+        several semantically related columns together.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="col" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="span" type="xs:unsignedInt" default="1"/>
+			<xs:attribute name="width" type="xs:unsignedInt"/>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="col">
+		<xs:annotation>
+			<xs:documentation>
+        XHTML1 (afgeleid):
+        col elements define the alignment properties for cells in
+        one or more columns.
+
+        The width attribute specifies the width of the columns, e.g.
+
+        width=64        width in screen pixels
+        width=0.5*      relative width of 0.5
+
+        The span attribute causes the attributes of one
+        col element to apply to more than one column.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="span" type="xs:unsignedInt" default="1"/>
+			<xs:attribute name="width" type="xs:unsignedInt"/>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tr.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="th.eenvoudig" minOccurs="0"/>
+				<xs:element ref="td.eenvoudig" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tr.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="th.uitgebreid" minOccurs="0"/>
+				<xs:element ref="td.uitgebreid" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="cellhalign"/>
+			<xs:attributeGroup ref="cellvalign"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      th is for headers, td for data and for cells acting as both
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="th.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.eenvoudig">
+					<xs:attribute name="rowspan" type="xs:unsignedInt" default="1"/>
+					<xs:attribute name="colspan" type="xs:unsignedInt" default="1"/>
+					<xs:attributeGroup ref="cellvalign"/>
+					<xs:attributeGroup ref="cellhalign"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="th.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.uitgebreid">
+					<xs:attribute name="rowspan" type="xs:unsignedInt" default="1"/>
+					<xs:attribute name="colspan" type="xs:unsignedInt" default="1"/>
+					<xs:attributeGroup ref="cellvalign"/>
+					<xs:attributeGroup ref="cellhalign"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="td.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.eenvoudig">
+					<xs:attribute name="rowspan" type="xs:unsignedInt" default="1"/>
+					<xs:attribute name="colspan" type="xs:unsignedInt" default="1"/>
+					<xs:attributeGroup ref="cellhalign"/>
+					<xs:attributeGroup ref="cellvalign"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="td.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>XHTML1 (afgeleid): </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.uitgebreid">
+					<xs:attribute name="rowspan" type="xs:unsignedInt" default="1"/>
+					<xs:attribute name="colspan" type="xs:unsignedInt" default="1"/>
+					<xs:attributeGroup ref="cellhalign"/>
+					<xs:attributeGroup ref="cellvalign"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Groep versiecodering ===============================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="versie.laatste.mutatie" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Datum waarop de informatie waarop de versie informatie betrekking heeft, voor de laatste keer is gemuteerd</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.datum" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Datum waarop de status is vastgesteld (c.q. de informatie in deze status is gepubliceerd)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.status" default="verplicht">
+		<xs:annotation>
+			<xs:documentation>Status van de versie</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="concept"/>
+				<xs:enumeration value="voorlopig vastgesteld"/>
+				<xs:enumeration value="definitief vastgesteld"/>
+				<xs:enumeration value="verplicht"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="versie.jaarversie" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Geeft de jaarversie aan (jjjj-mm formaat)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.versie" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Geeft de versie van tussentijdse updates aan (jj-mm formaat)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.kenmerk.nieuw" type="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>Leeg element dat aangeeft dat het nieuwe informatie betreft</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.kenmerk.vervang">
+		<xs:annotation>
+			<xs:documentation>Element dat aangeeft dat de informatie waarop de versie informatie betrekking heeft, andere reeds aanwezige informatie vervangt</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="versie.datum"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="versie.kenmerk.vervallen" type="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>Element dat aangeeft dat de informatie waarop de versie informatie betrekking heeft, vervalt</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.informatie">
+		<xs:annotation>
+			<xs:documentation>Groep elementen met alle versie informatie</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="versie.eigen.tekst"/>
+				<xs:sequence>
+					<xs:element ref="versie.datum"/>
+					<xs:element ref="versie.status"/>
+					<xs:element ref="versie.jaarversie"/>
+					<xs:element ref="versie.versie" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="versie.kenmerk.nieuw"/>
+						<xs:element ref="versie.kenmerk.vervang"/>
+						<xs:element ref="versie.kenmerk.vervallen"/>
+					</xs:choice>
+					<xs:element ref="versie.laatste.mutatie"/>
+					<xs:element ref="versie.groepeer" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="versie.groepeer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="versie.groepeer.code"/>
+				<xs:element ref="versie.groepeer.beschrijving" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="versie.groepeer.code" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Code die wordt gebruikt om later sets met gelijksoortige informatie (bijvoorbeeld een tervisielegging) bij elkaar te zoeke</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.groepeer.beschrijving" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Beschrijving van de gelijksoortige informatie</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="versie.eigen.tekst" type="gen.leegelement">
+		<xs:annotation>
+			<xs:documentation>leeg element om aan te geven dat het een eigen tekst in een overeenkomst betreft</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Groepen algemene elementen ===============================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:group name="grp.lijsten.hoofdcode">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op opsommingen</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="lijst.hoofdcode"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="grp.lijsten.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op opsommingen</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="lijst.uitgebreid"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="grp.lijsten.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op eenvoudige opsommingen</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="lijst.eenvoudig"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="grp.tables.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op de diverse onderdelen van tabellen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="tabel.aanduiding" minOccurs="0"/>
+			<xs:element ref="tabel.eenvoudig"/>
+			<xs:element ref="tabel.voettekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="grp.tables.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op de diverse onderdelen van tabellen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="tabel.aanduiding" minOccurs="0"/>
+			<xs:element ref="tabel.uitgebreid"/>
+			<xs:element ref="tabel.voettekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="grp.regelopmaak">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op de regelopmaak</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="br"/>
+			<xs:element ref="tab"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="grp.figuur">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op figuren</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="img"/>
+			<xs:element ref="figuur.aanduiding" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="grp.supersub">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die betrekking hebben op het super / sub weergeven van tekst</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="sup"/>
+			<xs:element ref="sub"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="grp.overig">
+		<xs:annotation>
+			<xs:documentation>Groep met elementen die niet in een andere groep kunnen worden ondergebracht</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="em"/>
+		</xs:choice>
+	</xs:group>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Groep tekstblok =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="tekstblok.naamlang" mixed="true">
+		<xs:annotation>
+			<xs:documentation>De elementen die voor kunnen komen in de naam van een artikel, een figuur, een proef of een tabel.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="grp.supersub"/>
+			<xs:group ref="grp.overig"/>
+			<xs:group ref="grp.regelopmaak"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.titel" mixed="true">
+		<xs:annotation>
+			<xs:documentation>De elementen die kunnen voorkomen in de een titel element van een resultaatsbeschrijving</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="grp.supersub"/>
+			<xs:group ref="grp.overig"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.eenvoudig" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Elementen van dit type kunnen diverse andere elementen bevatten</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="grp.supersub"/>
+			<xs:group ref="grp.regelopmaak"/>
+			<xs:group ref="grp.overig"/>
+			<xs:group ref="grp.lijsten.eenvoudig"/>
+			<xs:group ref="grp.tables.eenvoudig"/>
+			<xs:element ref="alinea.inschrijvingsdocument"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.uitgebreid">
+		<xs:annotation>
+			<xs:documentation>Elementen van dit type kunnen diverse andere opmaakelementen bevatten</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="alinea.paragraaf"/>
+			<xs:group ref="grp.lijsten.uitgebreid"/>
+			<xs:group ref="grp.tables.uitgebreid"/>
+			<xs:group ref="grp.figuur"/>
+			<xs:element ref="aanwijzings.tekst"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.hoofdcode.titel">
+		<xs:annotation>
+			<xs:documentation>De (uitgebreide) naam van een RAW-hoofdcode</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="hoofdcode.titel.vastetekst"/>
+				<xs:element ref="hoofdcode.titel.vrijetekst"/>
+			</xs:choice>
+			<xs:element ref="aanwijzings.tekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.hoofdcode">
+		<xs:annotation>
+			<xs:documentation>De vaste en variabele tekstblokken binnen een hoofdcode</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="alinea.hoofdcode"/>
+				<xs:group ref="grp.lijsten.hoofdcode"/>
+				<xs:group ref="grp.tables.eenvoudig"/>
+				<xs:element ref="aanwijzings.tekst"/>
+			</xs:choice>
+			<!--<xs:element ref="aanwijzings.tekst"  minOccurs="0" />-->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.inschrijvingsdocumenten">
+		<xs:annotation>
+			<xs:documentation>Elementen van dit type kunnen diverse andere opmaakelementen bevatten</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="alinea.inschrijvingsdocument"/>
+			<xs:group ref="grp.lijsten.eenvoudig"/>
+			<xs:group ref="grp.tables.eenvoudig"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="tekstblok.alinea.vastvrij">
+		<xs:annotation>
+			<xs:documentation>De vaste en variabele teksten binnen een alinea in een hoofdcode of inschrijvingsdocument</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="hoofdcode.vastetekst"/>
+			<xs:element ref="hoofdcode.vrijetekst"/>
+			<xs:element ref="hoofdcode.invultekst"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Semantische elementen =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="aanwijzings.tekst" type="tekstblok.eenvoudig">
+		<xs:annotation>
+			<xs:documentation>Element waarmee aanwijzingen kunnen worden toegevoegd</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="alinea.paragraaf">
+		<xs:annotation>
+			<xs:documentation>Element die een alinea voorstelt in de overige delen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.naamlang">
+					<xs:attribute ref="inspring"/>
+					<xs:attribute ref="tabposities"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="alinea.hoofdcode">
+		<xs:annotation>
+			<xs:documentation>Element die een alinea voorstelt in deel22 waaraan een bouwstof gekoppeld kan worden</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.alinea.vastvrij">
+					<xs:attribute ref="inspring"/>
+					<xs:attribute ref="tabposities"/>
+					<xs:attribute ref="eenheid.bouwstof"/>
+					<xs:attribute ref="eenheidwijzigbaar"/>
+					<xs:attribute ref="hoev.bouwstof"/>
+					<xs:attribute ref="aard"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="alinea.inschrijvingsdocument">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.alinea.vastvrij">
+					<xs:attribute ref="inspring"/>
+					<xs:attribute ref="tabposities"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Systeemgebonden artikel elementen =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="hoofdstuk.nr0109">
+		<xs:annotation>
+			<xs:documentation>Nummer van een hoofdstuk van 01 t/m 09. In de Standaard mag 02 niet worden gebruikt daar dit hoofdstuk gereserveerd is voor proeven. In deel 3 van het bestek c.q. het ABB mag 02 wel worden gebruikt.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="0[0-9]"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="hoofdstuk.nr1099" type="gen.codetweecijferspeciaal">
+		<xs:annotation>
+			<xs:documentation>Nummer van een hoofdstuk van 10 t/m 99</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="proef.nr">
+		<xs:annotation>
+			<xs:documentation>Proefnummer</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="6"/>
+				<xs:pattern value="[1-9][0-9]{0,2}(\.([1-9][0-9]?|0)|A|B)?"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Elementen voor systematiekspecifieke toevoegingen aan tabellen en figuren =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="tabel.volgnr" type="gen.codeeenoftweecijfer">
+		<xs:annotation>
+			<xs:documentation>Volgnummer van een tabel</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="tabel.naam" type="tekstblok.naamlang">
+		<xs:annotation>
+			<xs:documentation>Beschrijving of naam bij een tabel</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="tabel.voettekst">
+		<xs:annotation>
+			<xs:documentation>Voettekst bij een tabel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.naamlang">
+					<xs:attribute ref="muteren" use="optional" default="ja"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="figuur.volgnr" type="gen.codeeenoftweecijfer">
+		<xs:annotation>
+			<xs:documentation>Volgnummer van een figuur</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="figuur.naam" type="tekstblok.naamlang">
+		<xs:annotation>
+			<xs:documentation>Beschrijving of naam bij een figuur</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="figuur.voettekst" type="tekstblok.naamlang">
+		<xs:annotation>
+			<xs:documentation>Voettekst bij een figuur</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="tabel.aanduiding">
+		<xs:annotation>
+			<xs:documentation>
+        tabel.aanduiding: nummer en naam van een tabel.
+        Hoofdstuknummer en tabelnummer zijn niet verplicht. In de Handleiding komen tabellen voor met alleen een naam.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0">
+					<xs:element ref="hoofdstuk.nr0109"/>
+					<xs:element ref="proef.nr"/>
+					<xs:element ref="hoofdstuk.nr1099"/>
+				</xs:choice>
+				<xs:element ref="tabel.volgnr" minOccurs="0"/>
+				<xs:element ref="tabel.naam"/>
+				<xs:element ref="tabel.voettekst" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute ref="muteren" use="optional" default="ja"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="figuur.aanduiding">
+		<xs:annotation>
+			<xs:documentation>
+        figuur.aanduiding: nummer en naam van een figuur
+        Hoofdstuknummer en figuurnummer zijn niet verplicht. In de Handleiding komen figuren voor met alleen een naam.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0">
+					<xs:element ref="hoofdstuk.nr0109"/>
+					<xs:element ref="proef.nr"/>
+					<xs:element ref="hoofdstuk.nr1099"/>
+				</xs:choice>
+				<xs:element ref="figuur.volgnr" minOccurs="0"/>
+				<xs:element ref="figuur.naam"/>
+				<xs:element ref="figuur.voettekst" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>
+      ================== Catalogus elementen =====================
+    </xs:documentation>
+	</xs:annotation>
+	<xs:element name="cat.compleet">
+		<xs:annotation>
+			<xs:documentation>De complete RAW catalogus met resultaatsverplichtingen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="werkcategorie.nr" type="gen.codetweecijferalgemeen">
+		<xs:annotation>
+			<xs:documentation>RAW-werkcategorienummer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="hoofdcode.volgnr" type="gen.codetweecijferalgemeen">
+		<xs:annotation>
+			<xs:documentation>RAW-hoofdcodevolgnummer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="romptekst" type="gen.naamkort" nillable="false">
+		<xs:annotation>
+			<xs:documentation>de verkorte naam (romptekst) van een RAW-hoofdcodevan een overeenkomst of de omschrijving van een staartpost</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="subwerkcategorie.nr" type="gen.codetweecijferalgemeen">
+		<xs:annotation>
+			<xs:documentation>RAW-subwerkcategorienummer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="hoofdcode.tekstblok">
+		<xs:annotation>
+			<xs:documentation>Element waarbinnen hoofdcode teksten zijn samengesteld</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.hoofdcode">
+					<xs:attribute name="lengte" type="xs:positiveInteger" default="500"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hoofdcode.invultekst">
+		<xs:annotation>
+			<xs:documentation>Element waarbinnen de bestekschrijver kleine stukjes eigen tekst kan invullen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="lengte" type="xs:positiveInteger" use="required"/>
+					<xs:attribute ref="invultype"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hoofdcode.vrijetekst">
+		<xs:annotation>
+			<xs:documentation>
+        Element waarbinnen eigen tekst worden ingevoerd
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.naamlang">
+					<xs:attribute name="lengte" type="xs:positiveInteger"/>
+					<xs:attribute ref="invultype"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hoofdcode.vastetekst" type="tekstblok.naamlang">
+		<xs:annotation>
+			<xs:documentation>
+        Element waar binnen vaste hoofdcode tekst wordt getoond
+      </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="hoofdcode.titel.vrijetekst">
+		<xs:annotation>
+			<xs:documentation>
+                Element waarbinnen eigen tekst worden ingevoerd
+            </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.titel">
+					<xs:attribute name="lengte" type="xs:positiveInteger"/>
+					<xs:attribute ref="invultype"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hoofdcode.titel.vastetekst" type="tekstblok.titel">
+		<xs:annotation>
+			<xs:documentation>
+                Element waar binnen vaste hoofdcode tekst wordt getoond
+            </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="deficode">
+		<xs:annotation>
+			<xs:documentation>Alle deficode-inhouden binnen één positie worden binnen dit element gegroepeerd</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="positie.nr" type="deficode.positienr"/>
+				<xs:element name="inhoud.nr" type="deficode.inhoudnr"/>
+				<xs:element ref="deficode.inhoud.tekst" maxOccurs="unbounded"/>
+				<xs:element ref="aanwijzings.tekst" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="deficode.inhoud.tekst">
+		<xs:annotation>
+			<xs:documentation>Deficode inhoud tekst</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tekstblok.hoofdcode">
+					<xs:attribute name="lengte" type="xs:positiveInteger" default="500"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>==================== Contractelementen ========================</xs:documentation>
+	</xs:annotation>
+	<xs:element name="behoort.tot.raamovk" nillable="false">
+		<xs:annotation>
+			<xs:documentation>element dat aangeeft of een bestekspost bij aanbesteding tot een bestek behoort (waarde = ja) of later is toegevoegd (waarde = nee) als de waarde '0' is betreft het een bestekspost die is toegevoegd aan de deelopdracht maar niet in de raamovk wordt overgenomen.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ja"/>
+				<xs:enumeration value="nee"/>
+				<xs:enumeration value="0"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

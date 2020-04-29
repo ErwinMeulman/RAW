@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="KPDXML"
+    targetNamespace="http://tempuri.org/KPDXML.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/KPDXML.xsd"
+    xmlns:mstns="http://tempuri.org/KPDXML.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>================== GwwBundel ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name ="GwwBundel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Info" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="Projecten" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="Bestekposten" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="Kostensoorten" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="Niveaus" maxOccurs="unbounded" minOccurs ="3"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:annotation>
+    <xs:documentation>================== Info ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Info" type="Informatie"/>
+  <xs:complexType name="Informatie">
+    <xs:sequence>
+      <xs:element name="Versie" type="xs:string" default="1.3"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:annotation>
+    <xs:documentation>================== Projecten ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Projecten" type="Project"/>
+  <xs:complexType name="Project">
+    <xs:sequence>
+      <xs:element name="Begroting.Type" type="BegrotingTypes"/>
+      <xs:element name="Jaarversie.Raw.Catalogus" type="JaarversieRawCatalogi"/>
+      <xs:element name="Titel" type="xs:string"/>
+      <xs:element name="Opdrachtgever" type="xs:string"/>
+      <xs:element name="Calculator" type="xs:string"/>
+      <xs:element name="Btw.Niveau">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Besteknummer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="37"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="BegrotingTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="Raw Bestek"/>
+      <xs:enumeration value="Raw OMOP"/>
+      <xs:enumeration value="Raw RO"/>
+      <xs:enumeration value="Raw SMMW"/>
+      <xs:enumeration value="Niet Raw"/>
+      <xs:enumeration value="Niet Raw Vrij"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="JaarversieRawCatalogi">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="2005-10, Release 2008-05"/>
+      <xs:enumeration value="2010-12, Release 2010-12"/>
+      <xs:enumeration value="2015-01, Release 2015-01"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:annotation>
+    <xs:documentation>================== Bestekposten ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Bestekposten" type="Bestekpost"/>
+  <xs:complexType name="Bestekpost">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Basiscode" type="xs:string"/>
+      <xs:element name="Calculatiecode" type="xs:string"/>
+      <xs:element name="Sorteercode" type="xs:string"/>
+      <xs:element name="Romptekst" type="xs:string"/>
+      <xs:element name="Omschrijving" type="Regels"/>
+      <xs:element name="Eenheid">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Hoeveelheid" type="xs:double"/>
+      <xs:element name="Relatiefactor" type="xs:double"/>
+      <xs:element name="Aard" type="Aarden"/>
+      <xs:element name="Kostprijs" type="xs:double"/>
+      <xs:element name="Kosten" type="xs:double"/>
+      <xs:element name="Inschrijfprijs" type="xs:double"/>
+      <xs:element name="Inschrijfbedrag" type="xs:double"/>
+      <xs:element name="Verrekenprijs" type="xs:double"/>
+      <xs:element name="Btw.Soort" type="BtwSoorten"/>
+      <xs:element name="Index" type="xs:boolean"/>
+      <xs:element name="Aantekening" type="Regels"/>
+      <xs:element name="BehoortBijOrigineel" type="xs:boolean"/>
+      <xs:element ref="Bestekposten" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element ref="Deelposten" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:complexType name ="Regels">
+      <xs:sequence>
+        <xs:element name="Regel" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  
+    <xs:simpleType name="Aarden">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="V"/>
+      <xs:enumeration value="N"/>
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="O"/>
+      <xs:enumeration value="A"/>
+        <xs:enumeration value="F"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BtwSoorten">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hoog"/>
+      <xs:enumeration value="Laag"/>
+      <xs:enumeration value="Geen"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:annotation>
+    <xs:documentation>================== Deelposten ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Deelposten" type="Deelpost"/>
+  <xs:complexType name="Deelpost">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Basiscode" type="xs:string"/>
+      <xs:element name="Calculatiecode" type="xs:string"/>
+      <xs:element name="Sorteercode" type="xs:string"/>
+      <xs:element name="Omschrijving" type="Regels"/>
+      <xs:element name="Eenheid">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Hoeveelheid" type="xs:double"/>
+      <xs:element name="Relatiefactor" type="xs:double"/>
+      <xs:element name="Kostprijs" type="xs:double"/>
+      <xs:element name="Kosten" type="xs:double"/>
+      <xs:element name="Productie" type="xs:double"/>
+      <xs:element name="Aantekening" type="Regels"/>
+
+      <xs:element ref="Tarieven" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:annotation>
+    <xs:documentation>================== Tarieven ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Tarieven" type="Tarief"/>
+  <xs:complexType name="Tarief">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Basiscode" type="xs:string"/>
+      <xs:element name="Sorteercode" type="xs:string"/>
+      <xs:element name="Omschrijving" type="Regels"/>
+      <xs:element name="Eenheid">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Kostprijs" type="xs:double"/>
+      <xs:element name="Wegingsfactor.Kostprijs" type="xs:double"/>
+      <xs:element name="Kostprijs.Inclusief" type="xs:double"/>
+      <xs:element name="Productie" type="xs:double"/>
+      <xs:element name="Wegingsfactor.Productie" type="xs:double"/>
+      <xs:element name="Productie.Inclusief" type="xs:double"/>
+      <xs:element name="Productie.Type" type= "ProductieTypen" default="Productie"/>
+      <xs:element name="Aantal" type="xs:double"/>
+      <xs:element name="Inzet" type="xs:double"/>
+      <xs:element name="Hoeveelheid" type="xs:double"/>
+      <xs:element name="Totale.Hoeveelheid" type="xs:double"/>
+      <xs:element name="Kosten" type="xs:double"/>
+      <xs:element name="Kosten.Inclusief" type="xs:double"/>
+      <xs:element name="Grootboek" type="xs:string"/>
+      <xs:element name="Bronvermelding" type="xs:string"/>
+      <xs:element name="Aantekening" type="Regels"/>
+      <xs:element name="Artikelcode" type="xs:string"/>
+      
+      <xs:element ref="Tarieven" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ProductieTypen">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Productie"/>
+      <xs:enumeration value="Norm"/> 
+      <xs:enumeration value="Vaste hoeveelheid"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:annotation>
+    <xs:documentation>================== Kostensoorten ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Kostensoorten" type="Kostensoort"/>
+  <xs:complexType name="Kostensoort">
+    <xs:sequence>
+      <xs:element name="Code">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Omschrijving">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Kosten.Type" type="KostenTypen"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="KostenTypen">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="Algemene kosten"/>
+      <xs:enumeration value="Arbeid"/>
+      <xs:enumeration value="Materiaal"/>
+      <xs:enumeration value="Materieel"/>
+      <xs:enumeration value="Onderaanneming"/>
+      <xs:enumeration value="Overige kosten"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:annotation>
+    <xs:documentation>================== Niveaus ==================</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Niveaus" type="Niveau"/>
+  <xs:complexType name="Niveau">
+    <xs:sequence>
+      <xs:element name="Code">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Omschrijving">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

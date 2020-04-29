@@ -1,0 +1,892 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="KpdGwwBasisDataSet" targetNamespace="http://tempuri.org/KpdGwwBasisDataSet.xsd" xmlns:mstns="http://tempuri.org/KpdGwwBasisDataSet.xsd" xmlns="http://tempuri.org/KpdGwwBasisDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="KpdGwwBasisDataSet" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bands">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BandID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="GridID" type="xs:int" />
+              <xs:element name="Key">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Naam">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Bedrijven">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BedrijfID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Naam">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Adres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plaats">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefoon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mobiel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fax">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContactPersoon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailAdres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InternetAdres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Eenheid">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EenheidID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Factor" type="xs:double" />
+              <xs:element name="EenheidWijzigbaar" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Element">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="EenheidID" type="xs:int" minOccurs="0" />
+              <xs:element name="SorteerCodeID" type="xs:int" minOccurs="0" />
+              <xs:element name="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" type="xs:int" />
+              <xs:element name="Aantekening">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KostPrijs" type="xs:double" />
+              <xs:element name="Onderbouwd" type="xs:boolean" />
+              <xs:element name="ElementMutatieDatum" type="xs:dateTime" />
+              <xs:element name="ProductieType" type="xs:int" />
+              <xs:element name="BronVermelding">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Grootboek">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DefaultWf" type="xs:double" />
+              <xs:element name="ElementSoortID" type="xs:int" />
+              <xs:element name="Nivo" type="xs:short" />
+              <xs:element name="Artikelcode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ElementBedrijf">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementBedrijfID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ElementID" type="xs:int" />
+              <xs:element name="BedrijfID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Elementsoort">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementsoortID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ElementsoortNivo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementsoortNivoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ElementsoortID" type="xs:int" />
+              <xs:element name="Nivo" type="xs:short" />
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grids">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GridID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Key">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Naam">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hoeveelheden">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HoeveelheidID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="EenheidID" type="xs:int" minOccurs="0" />
+              <xs:element name="ElementsoortID" type="xs:int" />
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hoeveelheid" type="xs:double" />
+              <xs:element name="HoofdcodeVan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HoofdcodeTot">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Info">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Versie" type="xs:int" />
+              <xs:element name="DatabaseNaam">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Inschrijvingsstaat">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InschrijvingsstaatID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" type="xs:int" />
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Instelling">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InstellingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Waarde">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KolomInstellingen">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KolomInstellingID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" type="xs:string" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="BandID" type="xs:int" />
+              <xs:element name="KolomID" type="xs:int" />
+              <xs:element name="Positie" type="xs:short" />
+              <xs:element name="Breedte" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Kolommen">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KolomID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="BandID" type="xs:int" />
+              <xs:element name="Key">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Naam">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StandaardBreedte" type="xs:short" />
+              <xs:element name="Verplicht" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Koppeling">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KoppelingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ParentID" type="xs:int" />
+              <xs:element name="ChildID" type="xs:int" />
+              <xs:element name="ParentNivo" type="xs:short" />
+              <xs:element name="SorteerCodeID" type="xs:int" minOccurs="0" />
+              <xs:element name="Inzet" type="xs:double" />
+              <xs:element name="WF1" type="xs:double" />
+              <xs:element name="WF2" type="xs:double" />
+              <xs:element name="RelatieFactor" type="xs:double" />
+              <xs:element name="Productie" type="xs:double" />
+              <xs:element name="ProductieType" type="xs:int" />
+              <xs:element name="Aantekening">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Formule">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Toelichting">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Percentage" type="xs:double" />
+              <xs:element name="KostenSoortVan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KostenSoortTm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KostenIncl" type="xs:double" />
+              <xs:element name="Hoeveelheid" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KostenSoort">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KostenSoortID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="KostenTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Wijzigbaar" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KostenType">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KostenTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProductieType">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ValueMember" type="xs:int" />
+              <xs:element name="DisplayMember">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Project">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="InGebruikDoor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AanmaakDatum" type="xs:dateTime" />
+              <xs:element name="AanmaakDoor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectOnderdeel">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectOnderdeelID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Revisie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MutatieDatum" type="xs:dateTime" />
+              <xs:element name="MutatieDoor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aantekening">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Auteur">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sorteercode">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SorteercodeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="EenheidID" type="xs:int" minOccurs="0" />
+              <xs:element name="Sorteercode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aantal" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StaartbladRegels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StaartRegelID" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="ProjectID" type="xs:int" />
+              <xs:element name="Nummer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="22" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Omschrijving">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Percentagepost" type="xs:boolean" />
+              <xs:element name="Bedrag" type="xs:double" />
+              <xs:element name="BedragMinderwerk" type="xs:double" />
+              <xs:element name="BtwID" type="xs:int" default="2" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Statussen">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ValueMember" type="xs:int" />
+              <xs:element name="DisplayMember">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BtwSoorten">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BtwID" type="xs:int" />
+              <xs:element name="Omschrijving" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Navigatie">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NavigatieID" type="xs:string" minOccurs="0" />
+              <xs:element name="InstapNiveau" type="xs:string" minOccurs="0" />
+              <xs:element name="ElementsoortID" type="xs:string" minOccurs="0" />
+              <xs:element name="Niveau" type="xs:string" minOccurs="0" />
+              <xs:element name="GridNaam" type="xs:string" minOccurs="0" />
+              <xs:element name="GridPositie" type="xs:string" minOccurs="0" />
+              <xs:element name="GridBindingSourceFilter" type="xs:string" minOccurs="0" />
+              <xs:element name="ActieveRijID" type="xs:string" minOccurs="0" />
+              <xs:element name="ActieveKolomNaam" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Bands" />
+      <xs:field xpath="mstns:BandID" />
+    </xs:unique>
+    <xs:unique name="Bedrijven_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Bedrijven" />
+      <xs:field xpath="mstns:BedrijfID" />
+    </xs:unique>
+    <xs:unique name="Eenheid_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Eenheid" />
+      <xs:field xpath="mstns:EenheidID" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Eenheid" />
+      <xs:field xpath="mstns:ProjectID" />
+      <xs:field xpath="mstns:Code" />
+    </xs:unique>
+    <xs:unique name="Element_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:ElementID" />
+    </xs:unique>
+    <xs:unique name="Element_Constraint2" msdata:ConstraintName="Constraint2">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:Code" />
+      <xs:field xpath="mstns:ElementSoortID" />
+      <xs:field xpath="mstns:Nivo" />
+    </xs:unique>
+    <xs:unique name="ElementBedrijf_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ElementBedrijf" />
+      <xs:field xpath="mstns:ElementBedrijfID" />
+    </xs:unique>
+    <xs:unique name="Elementsoort_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Elementsoort" />
+      <xs:field xpath="mstns:ElementsoortID" />
+    </xs:unique>
+    <xs:unique name="Elementsoort_Constraint2" msdata:ConstraintName="Constraint2">
+      <xs:selector xpath=".//mstns:Elementsoort" />
+      <xs:field xpath="mstns:ProjectID" />
+      <xs:field xpath="mstns:Code" />
+    </xs:unique>
+    <xs:unique name="ElementsoortNivo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ElementsoortNivo" />
+      <xs:field xpath="mstns:ElementsoortID" />
+      <xs:field xpath="mstns:Nivo" />
+    </xs:unique>
+    <xs:unique name="ElementsoortNivo_Constraint2" msdata:ConstraintName="Constraint2">
+      <xs:selector xpath=".//mstns:ElementsoortNivo" />
+      <xs:field xpath="mstns:ElementsoortNivoID" />
+    </xs:unique>
+    <xs:unique name="Grids_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grids" />
+      <xs:field xpath="mstns:GridID" />
+    </xs:unique>
+    <xs:unique name="Hoeveelheden_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Hoeveelheden" />
+      <xs:field xpath="mstns:HoeveelheidID" />
+    </xs:unique>
+    <xs:unique name="Info_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Info" />
+      <xs:field xpath="mstns:Versie" />
+    </xs:unique>
+    <xs:unique name="Inschrijvingsstaat_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Inschrijvingsstaat" />
+      <xs:field xpath="mstns:InschrijvingsstaatID" />
+    </xs:unique>
+    <xs:unique name="Instelling_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Instelling" />
+      <xs:field xpath="mstns:InstellingID" />
+    </xs:unique>
+    <xs:unique name="KolomInstellingen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KolomInstellingen" />
+      <xs:field xpath="mstns:KolomInstellingID" />
+    </xs:unique>
+    <xs:unique name="Kolommen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Kolommen" />
+      <xs:field xpath="mstns:KolomID" />
+    </xs:unique>
+    <xs:unique name="Koppeling_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Koppeling" />
+      <xs:field xpath="mstns:KoppelingID" />
+    </xs:unique>
+    <xs:unique name="KostenSoort_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KostenSoort" />
+      <xs:field xpath="mstns:KostenSoortID" />
+    </xs:unique>
+    <xs:unique name="KostenType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KostenType" />
+      <xs:field xpath="mstns:KostenTypeID" />
+    </xs:unique>
+    <xs:unique name="ProductieType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ProductieType" />
+      <xs:field xpath="mstns:ValueMember" />
+    </xs:unique>
+    <xs:unique name="Project_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Project" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:unique>
+    <xs:unique name="ProjectOnderdeel_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ProjectOnderdeel" />
+      <xs:field xpath="mstns:ProjectOnderdeelID" />
+    </xs:unique>
+    <xs:unique name="Sorteercode_Constraint2" msdata:ConstraintName="Constraint2">
+      <xs:selector xpath=".//mstns:Sorteercode" />
+      <xs:field xpath="mstns:ProjectID" />
+      <xs:field xpath="mstns:Sorteercode" />
+    </xs:unique>
+    <xs:unique name="Sorteercode_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Sorteercode" />
+      <xs:field xpath="mstns:SorteercodeID" />
+    </xs:unique>
+    <xs:unique name="StaartbladRegels_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StaartbladRegels" />
+      <xs:field xpath="mstns:StaartRegelID" />
+    </xs:unique>
+    <xs:unique name="Statussen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Statussen" />
+      <xs:field xpath="mstns:ValueMember" />
+    </xs:unique>
+    <xs:unique name="BtwSoorten_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BtwSoorten" />
+      <xs:field xpath="mstns:BtwID" />
+    </xs:unique>
+    <xs:keyref name="Project_StaartbladRegels_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:StaartbladRegels" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Eenheid_Sorteercode_FK1" refer="Eenheid_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Sorteercode" />
+      <xs:field xpath="mstns:EenheidID" />
+    </xs:keyref>
+    <xs:keyref name="Project_Sorteercode_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:Sorteercode" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Project_ProjectOnderdeel_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:ProjectOnderdeel" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Project_KostenType_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:KostenType" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="KostenType_KostenSoort_FK1" refer="KostenType_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:KostenSoort" />
+      <xs:field xpath="mstns:KostenTypeID" />
+    </xs:keyref>
+    <xs:keyref name="Project_KostenSoort_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:KostenSoort" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Element_Koppeling_FK2" refer="Element_Constraint1">
+      <xs:selector xpath=".//mstns:Koppeling" />
+      <xs:field xpath="mstns:ChildID" />
+    </xs:keyref>
+    <xs:keyref name="Element_Koppeling_FK1" refer="Element_Constraint1">
+      <xs:selector xpath=".//mstns:Koppeling" />
+      <xs:field xpath="mstns:ParentID" />
+    </xs:keyref>
+    <xs:keyref name="Sorteercode_Koppeling_FK1" refer="Sorteercode_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Koppeling" />
+      <xs:field xpath="mstns:SorteerCodeID" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProductieType_Koppeling" refer="ProductieType_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Koppeling" />
+      <xs:field xpath="mstns:ProductieType" />
+    </xs:keyref>
+    <xs:keyref name="Bands_Kolommen_FK1" refer="Constraint1">
+      <xs:selector xpath=".//mstns:Kolommen" />
+      <xs:field xpath="mstns:BandID" />
+    </xs:keyref>
+    <xs:keyref name="Project_KolomInstelling_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:KolomInstellingen" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Kolommen_KolomInstelling_FK1" refer="Kolommen_Constraint1">
+      <xs:selector xpath=".//mstns:KolomInstellingen" />
+      <xs:field xpath="mstns:KolomID" />
+    </xs:keyref>
+    <xs:keyref name="Bands_KolomInstelling_FK1" refer="Constraint1">
+      <xs:selector xpath=".//mstns:KolomInstellingen" />
+      <xs:field xpath="mstns:BandID" />
+    </xs:keyref>
+    <xs:keyref name="Project_Instelling_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:Instelling" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="FK_Elementsoort_Hoeveelheden" refer="Elementsoort_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Hoeveelheden" />
+      <xs:field xpath="mstns:ElementsoortID" />
+    </xs:keyref>
+    <xs:keyref name="Eenheid_Hoeveelheden_FK1" refer="Eenheid_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Hoeveelheden" />
+      <xs:field xpath="mstns:EenheidID" />
+    </xs:keyref>
+    <xs:keyref name="Project_Hoeveelheden_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:Hoeveelheden" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Elementsoort_ElementsoortNivo_FK1" refer="Elementsoort_Constraint1">
+      <xs:selector xpath=".//mstns:ElementsoortNivo" />
+      <xs:field xpath="mstns:ElementsoortID" />
+    </xs:keyref>
+    <xs:keyref name="Project_Elementsoort_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:Elementsoort" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Element_ElementBedrijf_FK1" refer="Element_Constraint1" msdata:UpdateRule="None">
+      <xs:selector xpath=".//mstns:ElementBedrijf" />
+      <xs:field xpath="mstns:ElementID" />
+    </xs:keyref>
+    <xs:keyref name="Bedrijven_ElementBedrijf_FK1" refer="Bedrijven_Constraint1" msdata:UpdateRule="None">
+      <xs:selector xpath=".//mstns:ElementBedrijf" />
+      <xs:field xpath="mstns:BedrijfID" />
+    </xs:keyref>
+    <xs:keyref name="Sorteercode_Element_FK1" refer="Sorteercode_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:SorteerCodeID" />
+    </xs:keyref>
+    <xs:keyref name="Eenheid_Element_FK1" refer="Eenheid_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:EenheidID" />
+    </xs:keyref>
+    <xs:keyref name="ElementsoortNivo_Element_FK1" refer="ElementsoortNivo_Constraint1">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:ElementSoortID" />
+      <xs:field xpath="mstns:Nivo" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProductieType_Element" refer="ProductieType_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:ProductieType" />
+    </xs:keyref>
+    <xs:keyref name="FK_Statussen_Element" refer="Statussen_Constraint1" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:Status" />
+    </xs:keyref>
+    <xs:keyref name="Project_Eenheid_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:Eenheid" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Project_Bedrijven_FK1" refer="Project_Constraint1">
+      <xs:selector xpath=".//mstns:Bedrijven" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:keyref>
+    <xs:keyref name="Grids_Bands_FK1" refer="Grids_Constraint1">
+      <xs:selector xpath=".//mstns:Bands" />
+      <xs:field xpath="mstns:GridID" />
+    </xs:keyref>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="BtwSoorten_StaartbladRegels" msdata:parent="BtwSoorten" msdata:child="StaartbladRegels" msdata:parentkey="BtwID" msdata:childkey="BtwID" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

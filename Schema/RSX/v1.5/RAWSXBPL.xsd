@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.5 24/05/2013">
+  <xs:include schemaLocation="RAWSXBASIS.xsd"/>
+
+  <xs:annotation>
+    <xs:documentation>
+      ================== Elementen voor bepalingen =====================
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="deelhoofdstuk.nr" type="gen.codeeencijferalgemeen">
+    <xs:annotation>
+      <xs:documentation>Nummer van een deelhoofdstuk</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="paragraaf.nr1">
+    <xs:annotation>
+      <xs:documentation>Nummer van een paragraaf (eencijferig en voorafgegaan door deelhoofdstuknr)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[1-7]"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="paragraaf.nr2" type="gen.codetweecijferalgemeen">
+    <xs:annotation>
+      <xs:documentation>Nummer van een paragraaf (tweecijferig)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="artikel.nr" type="gen.codetweecijferalgemeen">
+    <xs:annotation>
+      <xs:documentation>Artikelnummer</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="lid.nr" type="gen.codetweecijferalgemeen">
+    <xs:annotation>
+      <xs:documentation>lid.nr</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+
+  <xs:element name="bpl.hoofdstuk0109">
+    <xs:annotation>
+      <xs:documentation>Definitie van de hoofdstukken 01 t/m 09.  In de Standaard mag dit element niet worden gebruikt voor hoofdstuk 02 in het bestek en in het ABB wel.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hoofdstuk.nr0109"/>
+        <xs:element name="hoofdstuk.naam" type="tekstblok.naamlang"/>
+        <xs:element ref="bpl.paragraaf.hfd0109" minOccurs ="0" maxOccurs="99"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+      <xs:attribute ref="paginaeinde"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.hoofdstuk1099">
+    <xs:annotation>
+      <xs:documentation>Definitie van hoofdstuk 10 t/m 99</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hoofdstuk.nr1099"/>
+        <xs:element name="hoofdstuk.naam" type="tekstblok.naamlang"/>
+        <xs:element ref="bpl.deelhoofdstuk" minOccurs ="0" maxOccurs="10"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+      <xs:attribute ref="paginaeinde"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.deelhoofdstuk">
+    <xs:annotation>
+      <xs:documentation>Definitie van een deelhoofdstuk</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="deelhoofdstuk.nr"/>
+        <xs:element name="deelhoofdstuk.naam" type="tekstblok.naamlang" minOccurs="0"/>
+        <xs:element ref="bpl.paragraaf.hfd1099" maxOccurs="7"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+      <xs:attribute ref="paginaeinde"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.paragraaf.hfd0109">
+    <xs:annotation>
+      <xs:documentation>
+        Definitie van een paragraaf (tweecijferig), moet worden gebruikt in hoofdstuk 01 t/m 09 uitzonderd paragrafen 02 t/m 99 van hoofdstuk 02.
+        NB de paragrafen 02 e.v. bevatten geen artikelen maar proeven.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="paragraaf.nr2"/>
+        <xs:element name="paragraaf.naam" type="tekstblok.naamlang"/>
+        <xs:element ref="bpl.artikel" minOccurs ="0" maxOccurs="99"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+      <xs:attribute ref="paginaeinde" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.paragraaf.hfd1099">
+    <xs:annotation>
+      <xs:documentation>
+        Definitie van een paragraaf (ééncijferig, moet worden gebruikt in deelhoofdstuk)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="paragraaf.nr1"/>
+        <xs:element name="paragraaf.naam" type="tekstblok.naamlang"/>
+        <xs:element ref="bpl.artikel" minOccurs ="0" maxOccurs="99"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+      <xs:attribute ref="paginaeinde" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.artikel">
+    <xs:annotation>
+      <xs:documentation>Definitie van een artikel</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="artikel.nr"/>
+        <xs:element ref="versie.informatie"/>
+        <xs:element name="artikel.hoofd" type="tekstblok.naamlang"/>
+        <xs:element ref="bpl.lid" minOccurs ="0" maxOccurs="99"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+      <xs:attribute ref="paginaeinde"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.lid">
+    <xs:annotation>
+      <xs:documentation>Lid met nummer en tekst</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="lid.nr"/>
+        <xs:element ref="bpl.lidtekst"/>
+      </xs:sequence>
+      <xs:attribute ref="tabposities"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bpl.lidtekst" type="tekstblok.uitgebreid">
+    <xs:annotation>
+      <xs:documentation>Tekst van een lid (kan meerdere elementen bevatten)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>
