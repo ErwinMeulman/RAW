@@ -1,0 +1,895 @@
+<?xml version="1.0" standalone="yes"?>
+<!--001-->
+<NewDataSet>
+	<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+			<xs:complexType>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="INFO">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Application" type="xs:string" minOccurs="0"/>
+								<xs:element name="Version" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Algemeen">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Algemeen_x005C_Bestanden">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Algemeen_x005C_Vensters">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Algemeen_x005C_Structuur">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Algemeen_x005C_Paden">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Algemeen_x005C_Kolommen">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek_x005C_CROW_x005C_DRAW">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek_x005C_Kleuren">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek_x005C_Kolommen">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek_x005C_Lettertype">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek_x005C_Paden">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Bestek_x005C_Vensters">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Setting" type="xs:string"/>
+								<xs:element name="Default" type="xs:string" minOccurs="0"/>
+								<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+								<xs:element name="Common" type="xs:string" minOccurs="0"/>
+								<xs:element name="Delete" type="xs:string" minOccurs="0"/>
+								<xs:element name="Type" type="xs:string" minOccurs="0"/>
+								<xs:element name="Hidden" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:complexType>
+			<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Algemeen"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Algemeen_x005C_Bestanden_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Algemeen_x005C_Bestanden"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Algemeen_x005C_Vensters_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Algemeen_x005C_Vensters"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Algemeen_x005C_Structuur_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Algemeen_x005C_Structuur"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Algemeen_x005C_Paden_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Algemeen_x005C_Paden"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Algemeen_x005C_Kolommen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Algemeen_x005C_Kolommen"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_x005C_CROW_x005C_DRAW_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek_x005C_CROW_x005C_DRAW"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_x005C_Kleuren_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek_x005C_Kleuren"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_x005C_Kolommen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek_x005C_Kolommen"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_x005C_Lettertype_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek_x005C_Lettertype"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_x005C_Paden_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek_x005C_Paden"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+			<xs:unique name="Bestek_x005C_Vensters_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+				<xs:selector xpath=".//Bestek_x005C_Vensters"/>
+				<xs:field xpath="Setting"/>
+			</xs:unique>
+		</xs:element>
+	</xs:schema>
+	<INFO>
+		<Application>GWW1</Application>
+		<Version>1</Version>
+		<Type>KPDSourceFile</Type>
+	</INFO>
+	<Algemeen>
+		<Setting>akkoord verklaring verwijderen</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>code zonder akkoord</Setting>
+		<Default>False</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>eenheden toevoegen toegestaan</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>eigenschappen voor opslaan</Setting>
+		<Default>False</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>initieel bestand gebruiken</Setting>
+		<Default>False</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>ophogen nulpost</Setting>
+		<Default>10</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Integer</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>ophogen volgpost</Setting>
+		<Default>1</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Integer</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>oude structuur inklappen</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>taal</Setting>
+		<Default>nl-NL</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>automatisch opslaan</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>automatisch opslaan minuten</Setting>
+		<Default>15</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Integer</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>laatst gebruikte bestanden</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>laatst gebruikte bestanden aantal</Setting>
+		<Default>4</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Integer</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>stijl</Setting>
+		<Default>2</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Integer</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>toon statusbalk</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen>
+		<Setting>tabbladen weergave</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Algemeen>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile1</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile2</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile3</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile4</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile5</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile6</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile7</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile8</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Bestanden>
+		<Setting>recentfile9</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Bestanden>
+	<Algemeen_x005C_Vensters>
+		<Setting>applicatie</Setting>
+		<Default>0;0;0;0;2</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>eenheden</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>info</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>productondersteuning</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>kolom breedtes</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>kolomdefinities</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>groep hercoderen</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>hercoderen</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>formule kaart</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>opeenvolgend coderen</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>opties</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>rapportoverzicht</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>selecteren criteria</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>toevoegen kolom</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Vensters>
+		<Setting>zoeken en vervangen</Setting>
+		<Default>0;0;0;0</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Vensters>
+	<Algemeen_x005C_Structuur>
+		<Setting>font</Setting>
+		<Default>arial;8;0;windowtext</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>FontDialog</Type>
+		<Hidden>False</Hidden>
+	</Algemeen_x005C_Structuur>
+	<Algemeen_x005C_Paden>
+		<Setting>uitwisselingspad</Setting>
+		<Default><!--WISEMETA: default="[UITWISSEL]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>DirDialog</Type>
+		<Hidden>False</Hidden>
+	</Algemeen_x005C_Paden>
+	<Algemeen_x005C_Kolommen>
+		<Setting>opties bestandslocatiegrid</Setting>
+		<Default>170;260</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Kolommen>
+	<Algemeen_x005C_Kolommen>
+		<Setting>opties kleurengrid</Setting>
+		<Default>200</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Kolommen>
+	<Algemeen_x005C_Kolommen>
+		<Setting>kolomdefinities geselecteerdgrid</Setting>
+		<Default>200;50</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Algemeen_x005C_Kolommen>
+	<Bestek>
+		<Setting>automatisch opnummeren</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>standaard hoeveelheidresultaatsverplichting</Setting>
+		<Default>V</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>False</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>standaard hoeveelheidterinlichting</Setting>
+		<Default>L</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>False</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>standaard zoom waarde</Setting>
+		<Default>100</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Integer</Type>
+		<Hidden>False</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>toon00en01</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>toon melding afdrukvoorbeeld worddocumenten</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>True</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>toon melding afdrukken PDF worddocumenten</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>True</Hidden>
+	</Bestek>
+	<Bestek>
+		<Setting>toon melding afdrukken zonder bladwisseling</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>True</Hidden>
+	</Bestek>
+	<Bestek_x005C_CROW_x005C_DRAW>
+		<Setting>gebruikersnaam</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_CROW_x005C_DRAW>
+	<Bestek_x005C_CROW_x005C_DRAW>
+		<Setting>gegevens opslaan</Setting>
+		<Default>True</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>Boolean</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_CROW_x005C_DRAW>
+	<Bestek_x005C_CROW_x005C_DRAW>
+		<Setting>wachtwoord</Setting>
+		<Default/>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_CROW_x005C_DRAW>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur achtergrond</Setting>
+		<Default>White</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur commentaar</Setting>
+		<Default>Blue</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur geen selectie</Setting>
+		<Default>Gray</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur hoeveelheid met formule</Setting>
+		<Default>Orange</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur lijnen</Setting>
+		<Default>Gray</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur uittrekstaat</Setting>
+		<Default>Magenta</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur vaste tekst</Setting>
+		<Default>Red</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kleuren>
+		<Setting>kleur vrije tekst</Setting>
+		<Default>DarkGreen</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>ColorDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Kleuren>
+	<Bestek_x005C_Kolommen>
+		<Setting>hercoderen hercoderengrid</Setting>
+		<Default>50;50;300;40</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>String</Type>
+		<Hidden>True</Hidden>
+	</Bestek_x005C_Kolommen>
+	<Bestek_x005C_Lettertype>
+		<Setting>standaard lettertype</Setting>
+		<Default>arial;9;11</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>FontDialogBestek</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Lettertype>
+	<Bestek_x005C_Paden>
+		<Setting>afdrukrapport</Setting>
+		<Default><!--WISEMETA: default="[RAPPORTBESTANDEN]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>FileDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Paden>
+	<Bestek_x005C_Paden>
+		<Setting>initieel bestand</Setting>
+		<Default><!--WISEMETA: default="[INITBESTEKKEN]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>FileDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Paden>
+	<Bestek_x005C_Paden>
+		<Setting>kpdgwwbestanden</Setting>
+		<Default><!--WISEMETA: default="[BESTEKKEN]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>DirDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Paden>
+	<Bestek_x005C_Paden>
+		<Setting>moederbestand</Setting>
+		<Default><!--WISEMETA: default="[MOEDERBESTEKKEN]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>FileDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Paden>
+	<Bestek_x005C_Paden>
+		<Setting>raw catalogus</Setting>
+		<Default><!--WISEMETA: default="[RAWCATALOGUS]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>DirDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Paden>
+	<Bestek_x005C_Paden>
+		<Setting>word sjablonen</Setting>
+		<Default><!--WISEMETA: default="[WORD_SJABLONEN]"-->!</Default>
+		<Scope>User</Scope>
+		<Common>False</Common>
+		<Delete>False</Delete>
+		<Type>DirDialog</Type>
+		<Hidden>False</Hidden>
+	</Bestek_x005C_Paden>
+</NewDataSet>
